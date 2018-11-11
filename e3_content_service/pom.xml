@@ -93,6 +93,8 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
+
+        <!-- solr客户端 -->
     </dependencies>
 
     <build>
