@@ -18,7 +18,7 @@
 		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd ">
 
     <!-- 配置Service扫描(可以扫描到子包) -->
-    <context:component-scan base-package="yp.e3mall.search.service"/>
+    <context:component-scan base-package="yp.e3mall.search"/>
 
     <!-- 使用dubbo发布服务 -->
     <!-- 提供方应用信息，用于计算依赖关系 -->
@@ -32,5 +32,8 @@
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="yp.e3mall.search.service.SearchItemService" ref="searchItemServiceImpl"
+                   timeout="600000"/>
+
+    <dubbo:service interface="yp.e3mall.search.service.SearchService" ref="searchServiceImpl"
                    timeout="600000"/>
 </beans>
