@@ -49,6 +49,7 @@
     <dubbo:reference interface="yp.e3mall.service.ItemCatService" id="itemCatService" />
     <dubbo:reference interface="yp.e3mall.content.service.ContentCategoryService" id="contentCategoryService" />
     <dubbo:reference interface="yp.e3mall.content.service.ContentService" id="contentService" />
+    <dubbo:reference interface="yp.e3mall.search.service.SearchItemService" id="searchItemService" />
     <dubbo:consumer timeout="5000" />
 
 </beans>

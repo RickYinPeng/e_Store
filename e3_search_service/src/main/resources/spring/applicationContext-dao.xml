@@ -35,6 +35,6 @@
         <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml"/>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="yp.e3mall.mapper"/>
+        <property name="basePackage" value="yp.e3mall.mapper,yp.e3mall.search.mapper"/>
     </bean>
 </beans>

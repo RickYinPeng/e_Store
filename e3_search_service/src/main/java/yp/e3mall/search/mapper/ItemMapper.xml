@@ -8,10 +8,10 @@
         a.sell_point,
         a.price,
         a.image,
-        b.name        category_name
+        b.name  category_name
       from tb_item a
       LEFT JOIN tb_item_cat b
-      on a.cid = b.idl
+      on a.cid = b.id
       where a.status = 1;
   </select>
 </mapper>
