@@ -37,7 +37,8 @@
       <div class="f-sort">
         <div class="pagin">
           <span class="txt"><span class="n">${page }</span>/${totalPages }</span>
-          <span class="prev">上一页</span><span class="next">下一页</span>       	</div>
+          <span class="prev">上一页</span><span class="next">下一页</span>
+        </div>
         <div class="total">共<span>${recourdCount }</span>个商品</div>
       </div>
     </div>
@@ -50,7 +51,7 @@
             <div class="l-wrap">
 				<div class="pic">
 					<a class="trackref" href="http://localhost:8086/item/${item.id}.html" title="" target="_blank">
-						<img src="${item.images[0] }" style="display:inline"/>
+						<img src="${item.images[0]}" style="display:inline"/>
 					</a>
 				</div>
 	            <div class="price">

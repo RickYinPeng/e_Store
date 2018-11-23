@@ -47,7 +47,7 @@ public class jedisTest {
         jedisPool.close();
     }
 
-    @Test
+
     public void testJedisCluster() throws Exception{
         //创建一个JedisCluster对象。有一个参数nodes是一个set类型。set中包含若干个HostAndPort对象
         Set<HostAndPort> nodes = new HashSet<>();

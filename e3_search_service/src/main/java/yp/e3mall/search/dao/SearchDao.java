@@ -47,8 +47,6 @@ public class SearchDao {
         Map<String, Map<String, List<String>>> highlighting =
                 queryResponse.getHighlighting();
 
-
-
         List<SearchItem> searchItems = new ArrayList<>();
         for (SolrDocument solrDocument:solrDocumentList){
             SearchItem searchItem = new SearchItem();
