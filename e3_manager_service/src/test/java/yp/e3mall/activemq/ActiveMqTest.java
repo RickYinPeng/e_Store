@@ -1,0 +1,56 @@
+package yp.e3mall.activemq;
+
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.junit.Test;
+
+import javax.jms.*;
+
+/**
+ * @author RickYinPeng
+ * @ClassName ActiveMqTest
+ * @Description
+ * @date 2018/11/27/18:30
+ */
+public class ActiveMqTest {
+
+    /**
+     * 点到点形式发送
+     * @throws Exception
+     */
+    @Test
+    public void testQueueProducer() throws Exception{
+        //1.创建一个连接工厂对象，需要指定服务的ip及端口
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://192.168.25.128:61616");
+
+        //2.使用工厂对象创建一个Connection对象
+        Connection connection = connectionFactory.createConnection();
+
+        //3.开启连接，调用Connection对象的start方法。
+        connection.start();
+
+        //4.创建一个Session对象
+        //第一个参数：是否开启事务。如果true开启事务，第二个参数将没有意义。一般不开旗事务
+        //第二个参数：应答模式。自动应答或者手动应答。一般自动应答。
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+        //5.使用Session对象创建一个Destination对象。两种形式queue、topic，现在应该使用queue
+        Queue queue = session.createQueue("test-queue");
+
+        //6.使用Session对象创建一个Producer对象。
+        MessageProducer producer = session.createProducer(queue);
+
+        //7.创建一个Message对象，可以使用TextMessage
+        /*TextMessage textMessage = new ActiveMQTextMessage();
+        textMessage.setText("hello Activemq");*/
+
+        TextMessage textMessage = session.createTextMessage("hello activemq");
+
+        //8.发送消息
+        producer.send(textMessage);
+
+        //9.关闭资源
+        producer.close();
+        session.close();
+        connection.close();
+    }
+}
