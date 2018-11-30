@@ -14,4 +14,18 @@
       on a.cid = b.id
       where a.status = 1;
   </select>
+    <select id="getItemById" parameterType="long" resultType="yp.e3mall.common.pojo.SearchItem">
+      select
+        a.id,
+        a.title,
+        a.sell_point,
+        a.price,
+        a.image,
+        b.name  category_name
+      from tb_item a
+      LEFT JOIN tb_item_cat b
+      on a.cid = b.id
+      where a.status = 1
+      AND a.id=#{itemid};
+    </select>
 </mapper>

@@ -3,6 +3,8 @@ package yp.e3mall.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 import yp.e3mall.common.pojo.EasyUIDataGridResult;
 import yp.e3mall.common.utils.E3Result;
@@ -14,6 +16,8 @@ import yp.e3mall.pojo.TbItemDesc;
 import yp.e3mall.pojo.TbItemExample;
 import yp.e3mall.service.ItemService;
 
+import javax.annotation.Resource;
+import javax.jms.*;
 import java.util.Date;
 import java.util.List;
 
@@ -32,6 +36,12 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
     private TbItemDescMapper tbItemDescMapper;
+
+	@Autowired
+    private JmsTemplate jmsTemplate;
+
+	@Resource
+    private Destination topicDestination;
 
 	@Override
 	public E3Result getItemById(long itemId) {
@@ -99,8 +109,15 @@ public class ItemServiceImpl implements ItemService {
         //向商品描述表插入数据
         tbItemDescMapper.insert(itemDesc);
 
-        //返回成功
+        //发送商品添加消息,需要注入jmsTemple
+        jmsTemplate.send(topicDestination, new MessageCreator() {
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                return session.createTextMessage(itemId+"");
+            }
+        });
 
+        //返回成功
 	    return E3Result.ok();
     }
 

@@ -42,7 +42,7 @@
     </bean>
     <!--这个是主题目的地，一对多的 -->
     <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
-        <constructor-arg value="topic" />
+        <constructor-arg value="itemAddTopic" />
     </bean>
     <!-- 接收消息 -->
     <!-- 配置监听器 -->
@@ -54,4 +54,14 @@
         <property name="destination" ref="queueDestination" />
         <property name="messageListener" ref="myMessageListener" />
     </bean>
+
+    <bean id="itemAddMessageListener" class="yp.e3mall.search.message.ItemAddMessageListener"></bean>
+    <!-- 监听商品添加容器，同步索引库 -->
+    <bean class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicDestination" />
+        <property name="messageListener" ref="itemAddMessageListener" />
+    </bean>
+
+
 </beans>
