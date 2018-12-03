@@ -19,10 +19,10 @@ public class ItemController {
 
     @RequestMapping("/rest/item/query/item/desc/{itemId}")
     @ResponseBody
-    public E3Result getItemById(@PathVariable Long itemId){
+    public E3Result getDescById(@PathVariable Long itemId){
         System.out.println("*************************************");
         System.out.println("itemId:"+itemId);
-        E3Result e3Result = itemService.getItemById(itemId);
+        E3Result e3Result = itemService.getDescById(itemId);
 
         return e3Result;
     }
