@@ -57,7 +57,7 @@ public class ItemServiceImpl implements ItemService {
     private String REDIS_ITEM_PRE;
 
 	@Value("${REDIS_ITEM_PRE}")
-    private Integer ITEM_CACHE_EXPIRE;
+    private String ITEM_CACHE_EXPIRE;
 
 	@Override
 	public E3Result getDescById(long itemId) {
@@ -167,7 +167,7 @@ public class ItemServiceImpl implements ItemService {
             try {
                 jedisClient.set(REDIS_ITEM_PRE+":"+itemId+":BASE", JsonUtils.objectToJson(tbItem));
                 //设置过期时间
-                jedisClient.expire(REDIS_ITEM_PRE+":"+itemId+":BASE",ITEM_CACHE_EXPIRE);
+                jedisClient.expire(REDIS_ITEM_PRE+":"+itemId+":BASE", Integer.parseInt(ITEM_CACHE_EXPIRE));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -197,7 +197,7 @@ public class ItemServiceImpl implements ItemService {
             try {
                 jedisClient.set(REDIS_ITEM_PRE+":"+itemId+":DESC", JsonUtils.objectToJson(itemDesc));
                 //设置过期时间
-                jedisClient.expire(REDIS_ITEM_PRE+":"+itemId+":DESC",ITEM_CACHE_EXPIRE);
+                jedisClient.expire(REDIS_ITEM_PRE+":"+itemId+":DESC", Integer.parseInt(ITEM_CACHE_EXPIRE));
             }catch (Exception e){
                 e.printStackTrace();
             }
