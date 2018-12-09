@@ -29,6 +29,6 @@
     <!--端口会冲突，所以改为20881，之前是20880-->
     <dubbo:protocol name="dubbo" port="20883" />
     <!-- 声明需要暴露的服务接口 -->
-    <!--<dubbo:service interface="yp.e3mall.content.service.ContentCategoryService" ref="contentCategoryServiceImpl"
-                   timeout="600000"/>-->
+    <dubbo:service interface="yp.e3mall.sso.service.RegisterService" ref="registerServiceImpl"
+                   timeout="600000"/>
 </beans>
