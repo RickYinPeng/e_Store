@@ -36,5 +36,6 @@
     <dubbo:registry protocol="zookeeper"
                     address="192.168.25.128:2181"/>
     <dubbo:reference interface="yp.e3mall.sso.service.RegisterService" id="registerService" />
+    <dubbo:reference interface="yp.e3mall.sso.service.LoginService" id="loginService" />
     <dubbo:consumer timeout="5000" />
 </beans>
