@@ -1,3 +1,4 @@
 yp\e3mall\common\pojo\SearchResult.class
 yp\e3mall\common\pojo\EasyUITreeNode.class
+yp\e3mall\common\utils\CookieUtils.class
 yp\e3mall\common\utils\JsonUtils.class
