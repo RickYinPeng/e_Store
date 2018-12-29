@@ -1,6 +1,8 @@
 package yp.e3mall.sso.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +22,29 @@ public class TokenController {
     @Autowired
     private TokenService tokenService;
 
-    @RequestMapping("/user/token/{token}")
+/*    @RequestMapping(value = "/user/token/{token}",produces= MediaType.APPLICATION_JSON_UTF8_VALUE*//*"application/json;charset=utf-8"*//*)
     @ResponseBody
-    public E3Result getUserByToken(@PathVariable String token){
+    public String getUserByToken(@PathVariable String token,String callback){
         E3Result result = tokenService.getUserByToken(token);
+        //响应结果之前先判断是否为jsonp请求
+        if(StringUtils.isNotBlank(callback)){
+            //把结果封装成一个js语句响应出去
+            return callback+"("+ JsonUtils.objectToJson(result)+");";
+        }
+        return JsonUtils.objectToJson(result);
+    }*/
+
+    @RequestMapping(value = "/user/token/{token}")
+    @ResponseBody
+    public Object getUserByToken(@PathVariable String token,String callback){
+        E3Result result = tokenService.getUserByToken(token);
+        //响应结果之前先判断是否为jsonp请求
+        if(StringUtils.isNotBlank(callback)){
+            //把结果封装成一个js语句响应出去
+            MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(result);
+            mappingJacksonValue.setJsonpFunction(callback);
+            return mappingJacksonValue.toString();
+        }
         return result;
     }
 }
