@@ -1,4 +1,12 @@
+yp\e3mall\common\pojo\SearchItem.class
+yp\e3mall\common\pojo\EasyUIDataGridResult.class
 yp\e3mall\common\pojo\SearchResult.class
+yp\e3mall\common\jedis\JedisClientCluster.class
+yp\e3mall\common\utils\FastDFSClient.class
+yp\e3mall\common\jedis\JedisClient.class
+yp\e3mall\common\jedis\JedisClientPool.class
 yp\e3mall\common\pojo\EasyUITreeNode.class
 yp\e3mall\common\utils\CookieUtils.class
+yp\e3mall\common\utils\E3Result.class
+yp\e3mall\common\utils\IDUtils.class
 yp\e3mall\common\utils\JsonUtils.class

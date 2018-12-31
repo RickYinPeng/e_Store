@@ -43,7 +43,7 @@ public class TokenController {
             //把结果封装成一个js语句响应出去
             MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(result);
             mappingJacksonValue.setJsonpFunction(callback);
-            return mappingJacksonValue.toString();
+            return mappingJacksonValue;
         }
         return result;
     }
