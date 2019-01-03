@@ -40,10 +40,17 @@ public interface CartService {
     E3Result updateCartNum(Long userId,Long itemId,int num);
 
     /**
-     *
+     * 删除购物车中的商品(一个)
      * @param userId 用户id
      * @param itemId 商品id
      * @return
      */
     E3Result deleteCartItem(Long userId,Long itemId);
+
+    /**
+     * 清除购物车（全部删除）
+     * @param userId 用户id
+     * @return
+     */
+    E3Result clearCartItem(long userId);
 }
