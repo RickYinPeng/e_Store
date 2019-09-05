@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:24:52 +0800] "GET /page/login HTTP/1.1" 200 10136 http-bio-8089-exec-1 2793
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:24:56 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8089-exec-3 4
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:25:16 +0800] "POST /user/login HTTP/1.1" 200 82 http-bio-8089-exec-5 17925
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:25:19 +0800] "GET /images/productinfo.png HTTP/1.1" 404 949 http-bio-8089-exec-7 85
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:25:21 +0800] "GET /user/token/68b08e66-0253-4b11-ad6d-6aa86c196910?callback=jsonp1546410320334 HTTP/1.1" 200 202 http-bio-8089-exec-8 672
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:25:50 +0800] "GET /user/token/68b08e66-0253-4b11-ad6d-6aa86c196910?callback=jQuery15109762734948762766_1546410347265&_=1546410350283 HTTP/1.1" 200 224 http-bio-8089-exec-10 240
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:25:57 +0800] "GET /user/token/68b08e66-0253-4b11-ad6d-6aa86c196910?callback=jQuery151097394441384385_1546410357197&_=1546410357475 HTTP/1.1" 200 222 http-bio-8089-exec-10 8
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:29:39 +0800] "GET /user/token/68b08e66-0253-4b11-ad6d-6aa86c196910?callback=jQuery1510578743742464725_1546410579323&_=1546410579447 HTTP/1.1" 200 223 http-bio-8089-exec-3 30
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:14:29:52 +0800] "GET /user/token/68b08e66-0253-4b11-ad6d-6aa86c196910?callback=jQuery15105639116573384226_1546410592246&_=1546410592363 HTTP/1.1" 200 224 http-bio-8089-exec-5 12
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:03:58 +0800] "GET /page/login?redirect=http://localhost:8093/order/order-cart.html HTTP/1.1" 200 10179 http-bio-8089-exec-7 5206
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:04:19 +0800] "POST /user/login HTTP/1.1" 200 82 http-bio-8089-exec-9 12651
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:04:19 +0800] "POST /user/login HTTP/1.1" 200 82 http-bio-8089-exec-2 1053
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:04:20 +0800] "GET /images/productinfo.png HTTP/1.1" 404 949 http-bio-8089-exec-9 411
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:04:25 +0800] "GET /user/token/32f56ace-0ee4-40c5-ad06-9a27a4e7c9f8?callback=jQuery15103766894369983418_1546419864890&_=1546419865305 HTTP/1.1" 200 224 http-bio-8089-exec-3 294
+0:0:0:0:0:0:0:1 - - [02/Jan/2019:17:04:37 +0800] "GET /user/token/32f56ace-0ee4-40c5-ad06-9a27a4e7c9f8?callback=jQuery15107301337407490653_1546419876751&_=1546419876960 HTTP/1.1" 200 224 http-bio-8089-exec-5 117

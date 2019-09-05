@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>${item.title } - 宜立方商城</title>
+	<title>${item.title } - 享租</title>
 	<script>
         var _SF_CFG = {
 	    www_url:'http://www.e3mall.cn',
@@ -107,7 +107,7 @@
                             </span>
                         </div>
                         <div class="pBtn" id="cart-add-btn-sf"><a onclick="cartAdd(${item.id}, 0, 1, 0, 1, this);"><b></b>加入购物车</a></div>
-                        <div class="pBtn quickBuy" style="display: none;" id="quickBuy" title="快速下单，直达填写订单页面"><a onclick="oneKeyBuy(${item.id}, 0, 1, 0, 1, this);">一键购买</a></div>
+                        <div class="pBtn quickBuy" style="display: none;" id="quickBuy" title="快速下单，直达填写订单页面"><a onclick="oneKeyBuy(${item.id}, 0, 1, 0, 1, this);">一键享租</a></div>
 						<div class="yj_time" id="sendTime">预计发货时间：<br>2014-02-28 08:59</div>
 						<div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							<!--手机二维码显示层-->
@@ -122,7 +122,7 @@
                     <div class="chooseBtns" id="buy-nogood-sf" style="display:none">
                         <div class="pBtn"><span class="noShip">已售完</span></div>
                         <div class="pBtn preBtn" id="arrival_notice"><a href="javascript:void(0);" onclick="Goods.arrivalNotice(this);">到货通知</a></div>
-                        <div class="pBtn quickBuy disable"><a href="javascript:void(0);">一键购买</a></div>
+                        <div class="pBtn quickBuy disable"><a href="javascript:void(0);">一键享租</a></div>
 						<div class="phone_client phone_border"><div id="phone_time">扫描下载客户端<br><em>先摇券 后买单</em></div>
 							<!--手机二维码显示层-->
 							<div class="phone_clientCode" style="display:none;">
